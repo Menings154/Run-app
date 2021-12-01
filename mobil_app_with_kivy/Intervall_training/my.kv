@@ -1,0 +1,133 @@
+WindowManager:
+	FirstWindow:
+	TimeWindow:
+	CountWindow:
+
+<FirstWindow>:
+	name: "first"
+
+	GridLayout:
+		cols:1
+
+		Button:
+			text: "Total Time"
+			on_release: app.root.current = "time"
+
+		Button:
+			text: "Number of Intervals"
+			on_release: app.root.current = "count"
+
+
+
+<TimeWindow>:
+	name: "time"
+	
+	mu_rest_t: mu_rest_t
+	sigma_rest_t: sigma_rest_t
+	mu_sprint_t: mu_sprint_t
+	sigma_sprint_t: sigma_sprint_t
+	totaltime: totaltime
+
+	GridLayout:
+		cols:1
+		
+		GridLayout:
+			cols:3
+
+			Label:
+				text: ""
+			Label:
+				text: "mu"
+			Label:
+				text: "sigma"
+
+			Label:
+				text: "Resttime: "
+
+			TextInput:
+				id: mu_rest_t
+				multiline: False
+
+			TextInput:
+				id: sigma_rest_t
+				multiline: False
+
+			Label:
+				text: "Sprinttime: "
+
+			TextInput:
+				id: mu_sprint_t
+				multiline: False
+
+			TextInput:
+				id: sigma_sprint_t
+				multiline: False
+		GridLayout:
+			cols:2
+
+			Label:
+				text: "Totaltime: "
+
+			TextInput:
+				id: totaltime
+				multiline: False
+		Button:
+			text: "Start"
+			on_release: root.start()
+
+<CountWindow>:
+	name: "count"
+
+	mu_rest_c: mu_rest_c
+	sigma_rest_c: sigma_rest_c
+	mu_sprint_c: mu_sprint_c
+	sigma_sprint_c: sigma_sprint_c
+	count: count
+
+	GridLayout:
+		cols:1
+		
+		GridLayout:
+			cols:3
+
+			Label:
+				text: ""
+			Label:
+				text: "mu"
+			Label:
+				text: "sigma"
+
+			Label:
+				text: "Resttime: "
+
+			TextInput:
+				id: mu_rest_c
+				multiline: False
+
+			TextInput:
+				id: sigma_rest_c
+				multiline: False
+
+			Label:
+				text: "Sprinttime: "
+
+			TextInput:
+				id: mu_sprint_c
+				multiline: False
+
+			TextInput:
+				id: sigma_sprint_c
+				multiline: False
+
+		GridLayout:
+			cols:2
+
+			Label:
+				text: "Sprincount: "
+
+			TextInput:
+				id: count
+				multiline: False
+		Button:
+			text: "Start"
+			on_release: root.start()
